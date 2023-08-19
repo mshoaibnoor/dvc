@@ -1,0 +1,46 @@
+https://github.com/nolancardozo13/dvc_mlflow
+https://www.sicara.fr/blog-technique/dvc-pipeline-runs-mlflow
+
+
+https://www.youtube.com/watch?v=NMcKkIEvpHA
+
+
+Steps to configure and commit data in dvc
+
+git init
+dvc init
+git commit -m "initial commit"
+git remote add origin https://github.com/mshoaibnoor/dvc.git
+git branch -M main
+git push -u origin main
+
+
+dvc remote add -d 
+dvc status
+dvc add file
+dvc push
+git add --all
+    git add data/wine-quality.csv.dvc data/.gitignore
+git commit -m "msg"
+git tag v1.0
+git push
+git push --tag
+
+
+###################### Configuring dvc remote with minio ################################
+# https://stackoverflow.com/questions/67635688/installation-dvc-on-minio-storage
+
+# setup default remote (change "bucket-name" to your minio backet name)
+dvc remote add -d minio s3://dvc -f
+
+# add information about storage url (where "https://minio.mysite.com" is your MinIO url)
+dvc remote modify minio endpointurl http://localhost:9000
+
+
+
+
+#  add MinIO credentials (e.g. from env. variables)
+dvc remote modify minio access_key_id sevljDUDwYw8pfi2Hqc8
+dvc remote modify minio secret_access_key 4mY2mSJb0QzNXH6SB7aUtfCN6bWsxaxuodtlJqNK
+
+###################### Configuring dvc with minio ################################
